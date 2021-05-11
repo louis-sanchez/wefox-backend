@@ -1,6 +1,9 @@
 const fetch = require('node-fetch')
 const MAPS_API = process.env.npm_package_config_maps_api
 
+const HTTP_OK = 200
+const HTTP_NOT_FOUND = 404
+
 class MapClient {
 
     async search(address) {
@@ -28,8 +31,21 @@ class MapClient {
             headers: { 'Content-Type': 'application/json' },
         }
 
-        const { status } = await fetch(request)
-        return status
+        return fetch(request)
+            .then(checkStatus)
+            .then(res => res.json())
+            .then(json => {
+                if (json.length)
+                    return HTTP_OK
+                else
+                    return HTTP_NOT_FOUND
+            })    
+    }
+}
+
+function checkStatus(res) {
+    if (res.ok) {
+        return res
     }
 }
 
