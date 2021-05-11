@@ -8,7 +8,6 @@ const app = express()
 app.post('/address', async ({ body }, res) => {
     const address = { ...body }
     const status = await search(address)
-    console.log(status)
     res.sendStatus(status)
 })
 
