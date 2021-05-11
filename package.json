@@ -3,9 +3,12 @@
   "version": "1.0.0",
   "description": "REST API backend that interacts with Google Maps and Open Weather",
   "main": "server.js",
+  "config": {
+    "port": "3000"
+  },
   "scripts": {
-    "start": "node server.js",
-    "test": "test"
+    "start": "node src/server.js",
+    "test": "jest"
   },
   "author": "louis-sanchez (https://github.com/louis-sanchez)",
   "license": "ISC",
@@ -14,6 +17,7 @@
     "nodemon": "^2.0.7"
   },
   "dependencies": {
-    "got": "^9.6.0"
+    "express": "^4.17.1",
+    "node-fetch": "^2.6.1"
   }
 }
