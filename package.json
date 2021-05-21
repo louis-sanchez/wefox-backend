@@ -7,10 +7,14 @@
     "port": "3000",
     "maps": {
       "api": "https://nominatim.openstreetmap.org"
+    },
+    "weather": {
+      "api": "http://www.7timer.info/bin/api.pl"
     }
   },
   "scripts": {
     "start": "node src/server.js",
+    "debug": "nodemon src/server.js",
     "test": "jest"
   },
   "author": "louis-sanchez (https://github.com/louis-sanchez)",
