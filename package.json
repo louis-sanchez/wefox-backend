@@ -9,7 +9,7 @@
       "api": "https://nominatim.openstreetmap.org"
     },
     "weather": {
-      "api": "http://www.7timer.info/bin/api.pl"
+      "api": "http://www.7timer.info"
     }
   },
   "scripts": {

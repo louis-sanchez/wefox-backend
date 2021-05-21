@@ -30,17 +30,11 @@ app.post('/weather', async ({ body }, res) => {
      const response = await search(address)
 
     if (response.length) {
-        console.log(response)
         const lat  = response[0].lat
         const lon  = response[0].lon
-
-        console.log("lat", lat)
-        console.log("lon", lon)
-
         const weather = await forecast(lat, lon)
-        console.log(weather)
 
-        res.sendStatus(HTTP_OK)
+        res.status(HTTP_OK).json(weather.dataseries[0]).send()
     }
     else
         res.sendStatus(HTTP_NOT_FOUND)
