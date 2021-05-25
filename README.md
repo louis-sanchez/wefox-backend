@@ -1,19 +1,40 @@
 # wefox-backend
 
-## Run
+## install
 ```
 npm install
+```
+
+## run
+```
 npm start
 ```
 
-## Run in DEBUG mode
+## run in debug mode
 ```
 npm run debug
 ```
 
-## Test
+## run tests
 ```
 npm test
+```
+
+## API
+### /address
+```
+curl -i \
+    -H "Content-Type: application/json" \
+    -X POST -d '{"street":"Paseo de Gracia", "streetNumber": "1", "town": "Barcelona", "postalCode": "08007", "country": "Spain"}' \
+    localhost:3000/address
+```
+
+### /weather
+```
+curl -i \
+    -H "Content-Type: application/json" \
+    -X POST -d '{"street":"Paseo de Gracia", "streetNumber": "1", "town": "Barcelona", "postalCode": "08007", "country": "Spain"}' \
+    localhost:3000/weather
 ```
 
 ## Requirements
@@ -30,4 +51,5 @@ npm test
   - Test for fault tolerance (i.e: what happens is Nomanatim API returns 5xx?)
   - Test for completion (i.e: unit tests, e2e, etc.)
   - Dockerize :)
+  - Add swagger docs for how to interact with API
  
